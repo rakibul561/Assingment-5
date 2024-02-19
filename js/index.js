@@ -1,5 +1,5 @@
 let count = 40;
-const allSit = document.getElementsByClassName("sit");
+const allSit = document.getElementsByClassName("set");
 for (const sit of allSit) {
     sit.addEventListener("click", function () {
         count = count - 1;
@@ -15,7 +15,7 @@ for (const sit of allSit) {
 }
 
 let done = 0;
-const sitDone = document.getElementsByClassName("sit");
+const sitDone = document.getElementsByClassName("set");
 for (const sit of sitDone) {
     sit.addEventListener("click", function (element) {
         done = done + 1;
@@ -24,19 +24,16 @@ for (const sit of sitDone) {
 
         // const clickSit=document.getElementById('click-sit').innerText=sitName;
 
-        setText("sit-done", done);
+        setByText("sit-done", done);
     });
 }
 
-function setText(id, value) {
+function setByText(id, value) {
     document.getElementById(id).innerText = value;
 }
 
-
-
-
 let sum = 0;
-const allBtn = document.getElementsByClassName('sit');
+const allBtn = document.getElementsByClassName('set');
 for (const btn of allBtn) {
 
     btn.addEventListener('click', function handler(event) {
@@ -44,9 +41,9 @@ for (const btn of allBtn) {
         const sets = event.target.innerText;
         console.log(sets);
 
-        const types = 'economy';
+        const item = 'economy';
         const price = 550;
-        showClassSeat('newSide', sets, types, price);
+        showClassSeat('newSide', sets, item, price);
 
         if (sum <= 4) {
             // alert('this sit is not allow');
